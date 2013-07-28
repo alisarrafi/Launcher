@@ -95,7 +95,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.common.Search;
+//import com.android.common.Search;
 import com.android.launcher.R;
 import com.android.launcher2.DropTarget.DragObject;
 
@@ -1621,7 +1621,7 @@ public final class Launcher extends Activity
         }
         if (appSearchData == null) {
             appSearchData = new Bundle();
-            appSearchData.putString(Search.SOURCE, "launcher-search");
+         //   appSearchData.putString(Search.SOURCE, "launcher-search");
         }
         Rect sourceBounds = new Rect();
         if (mSearchDropTargetBar != null) {
@@ -1639,14 +1639,14 @@ public final class Launcher extends Activity
             boolean selectInitialQuery, Bundle appSearchData, Rect sourceBounds) {
         final SearchManager searchManager =
             (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
-        if (globalSearchActivity == null) {
+   //     ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
+        /*if (globalSearchActivity == null) {
             Log.w(TAG, "No global search activity found.");
             return;
-        }
+        }*/
         Intent intent = new Intent(SearchManager.INTENT_ACTION_GLOBAL_SEARCH);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setComponent(globalSearchActivity);
+        //intent.setComponent(globalSearchActivity);
         // Make sure that we have a Bundle to put source in
         if (appSearchData == null) {
             appSearchData = new Bundle();
@@ -1668,7 +1668,7 @@ public final class Launcher extends Activity
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException ex) {
-            Log.e(TAG, "Global search activity not found: " + globalSearchActivity);
+            //Log.e(TAG, "Global search activity not found: " + globalSearchActivity);
         }
     }
 
@@ -3863,16 +3863,16 @@ public final class Launcher extends Activity
 
         // Restricted secondary users (child mode) will potentially have very few apps
         // seeded when they start up for the first time. Clings won't work well with that
-        boolean supportsLimitedUsers =
-                android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
+      /*  boolean supportsLimitedUsers =
+                android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;*/
         Account[] accounts = AccountManager.get(this).getAccounts();
-        if (supportsLimitedUsers && accounts.length == 0) {
+     /*   if (supportsLimitedUsers && accounts.length == 0) {
             UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
-            Bundle restrictions = um.getUserRestrictions();
+         /*   Bundle restrictions = um.getUserRestrictions();
             if (restrictions.getBoolean(UserManager.DISALLOW_MODIFY_ACCOUNTS, false)) {
                return false;
             }
-        }
+        }*/
         return true;
     }
 

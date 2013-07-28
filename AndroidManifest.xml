@@ -56,10 +56,11 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <!-- <uses-permission android:name="android.permission.BIND_APPWIDGET" /> -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-sdk android:targetSdkVersion="18" android:minSdkVersion="17"/>
 
     <application
         android:name="com.android.launcher2.LauncherApplication"
