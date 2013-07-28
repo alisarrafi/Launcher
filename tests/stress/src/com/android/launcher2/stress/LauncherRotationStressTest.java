@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.android.launcher2.stress;
+package com.andernity.launcher2.stress;
 
 
-import com.android.launcher2.Launcher;
+import com.andernity.launcher2.Launcher;
 
 import android.content.pm.ActivityInfo;
 import android.os.SystemClock;
